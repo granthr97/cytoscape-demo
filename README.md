@@ -1,4 +1,4 @@
-# Basic Demo Tutorial
+# Basic Demo Tutorial (Owen)
 
 - Clone this repo
 - Create an index.html file with
@@ -107,7 +107,7 @@ var cy = cytoscape({
 </html>
 ```
 
-# Non-basic Tutorial
+# Non-basic Tutorial (Grant)
 
 - Do all the following on top of the basic above
 - Create a complete graph of elements
@@ -148,4 +148,84 @@ elements: elements,
 cy.layout({
     name: 'circle'
 }).run();
+```
+
+## Stying
+
+- Style the nodes by adding this to the cy object
+
+```
+...
+style: [
+  {
+    selector: "node",
+    style: {
+      shape: "hexagon",
+      "background-color": "red",
+      label: "data(id)"
+    }
+  }
+]
+...
+
+```
+
+- Style the edges by adding
+
+```
+style: [
+  ...
+  {
+    selector: "edge",
+    style: {
+      width: 4,
+      "line-color": "green"
+    }
+  }
+]
+```
+
+## Animation
+
+- Animate using
+
+```
+cy.animate({
+  fit: { eles: "#j" }
+});
+```
+
+- Chain multiple animations using
+
+```
+cy.animate({
+  fit: { eles: "#j" }
+})
+.delay(1000)
+.animate({
+  fit: { eles: "#e" }
+});
+```
+
+## Filtering
+
+- First, add some random weights
+
+```
+...
+elements.push({
+  data: {
+    id: nodes[i] + nodes[j],
+    source: nodes[i],
+    target: nodes[j],
+    weight: Math.random()
+  }
+});
+...
+```
+
+- Filtering is easy with selectors
+
+```
+cy.remove(cy.edges().filter("[weight > 0.2]"))
 ```
