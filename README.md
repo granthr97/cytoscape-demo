@@ -109,6 +109,8 @@ var cy = cytoscape({
 </html>
 ```
 
+![1](images/1.png?raw=true "setup")
+
 # Playground (Grant)
 
 - Do all the following on top of the basic above
@@ -143,6 +145,8 @@ elements: elements,
 ...
 ```
 
+![2](images/2.png?raw=true "setup")
+
 - Change the layout
 
 ```
@@ -152,7 +156,9 @@ cy.layout({
 }).run();
 ```
 
-## Stying
+![3](images/3.png?raw=true "setup")
+
+## Styling
 
 - Style the nodes by adding this to the cy object
 
@@ -172,6 +178,8 @@ style: [
 
 ```
 
+![4](images/4.png?raw=true "setup")
+
 - Style the edges by adding
 
 ```
@@ -186,6 +194,8 @@ style: [
   }
 ]
 ```
+
+![5](images/5.png?raw=true "setup")
 
 ## Animation
 
@@ -229,5 +239,7 @@ elements.push({
 - Filtering is easy with selectors
 
 ```
-cy.remove(cy.edges().filter("[weight > 0.2]"))
+cy.remove(cy.edges().filter("[weight > 0.2]"));
 ```
+
+![6](images/6.png?raw=true "setup")
