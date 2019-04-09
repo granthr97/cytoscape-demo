@@ -1,3 +1,5 @@
+# Basic Demo Tutorial
+
 - Clone this repo
 - Create an index.html file with
 
@@ -6,7 +8,7 @@
 <html>
 <head>
     <title>Tutorial 1: Getting Started</title>
-    <script src='cytoscape.js'></script>
+    <script src='cytoscape.min.js'></script>
 </head>
 <body></body>
 </html>
@@ -71,7 +73,7 @@ var cy = cytoscape({
 
 <head>
     <title>Tutorial 1: Getting Started</title>
-    <script src="cytoscape.js"></script>
+    <script src="cytoscape.min.js"></script>
 </head>
 
 <style>
@@ -103,4 +105,47 @@ var cy = cytoscape({
     </script>
 </body>
 </html>
+```
+
+# Non-basic Tutorial
+
+- Do all the following on top of the basic above
+- Create a complete graph of elements
+
+```
+var nodes = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
+var elements = [];
+for (var i = 0; i < nodes.length; i++) {
+  elements.push({ data: { id: nodes[i] } });
+}
+for (var i = 0; i < nodes.length; i++) {
+  for (var j = 0; j < nodes.length; j++) {
+    if (i != j) {
+      elements.push({
+        data: {
+          id: nodes[i] + nodes[j],
+          source: nodes[i],
+          target: nodes[j]
+        }
+      });
+    }
+  }
+}
+```
+
+- Replace the elements
+
+```
+...
+elements: elements,
+...
+```
+
+- Change the layout
+
+```
+...
+cy.layout({
+    name: 'circle'
+}).run();
 ```

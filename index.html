@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Tutorial 1: Getting Started</title>
+    <script src="cytoscape.min.js"></script>
+  </head>
+
+  <style>
+    #cy {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+  </style>
+
+  <body>
+    <div id="cy"></div>
+    <script>
+      var nodes = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
+      var elements = [];
+      for (var i = 0; i < nodes.length; i++) {
+        elements.push({ data: { id: nodes[i] } });
+      }
+      for (var i = 0; i < nodes.length; i++) {
+        for (var j = 0; j < nodes.length; j++) {
+          if (i != j) {
+            elements.push({
+              data: {
+                id: nodes[i] + nodes[j],
+                source: nodes[i],
+                target: nodes[j]
+              }
+            });
+          }
+        }
+      }
+      var cy = cytoscape({
+        container: document.getElementById("cy"),
+        elements: elements
+      });
+      cy.layout({
+        name: "circle"
+      }).run();
+    </script>
+  </body>
+</html>
