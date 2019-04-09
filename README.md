@@ -1,4 +1,4 @@
-# Setup
+# Setup (Owen)
 
 ## Follow this tutorial: bit.ly/2KnNECm
 
@@ -109,7 +109,7 @@ var cy = cytoscape({
 </html>
 ```
 
-# Non-basic Tutorial (Grant)
+# Playground (Grant)
 
 - Do all the following on top of the basic above
 - Create a complete graph of elements
