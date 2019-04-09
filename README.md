@@ -1,4 +1,6 @@
-# Basic Demo Tutorial (Owen)
+# Setup
+
+## Follow this tutorial: bit.ly/2KnNECm
 
 - Clone this repo
 - Create an index.html file with
